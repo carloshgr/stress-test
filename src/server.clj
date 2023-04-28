@@ -3,7 +3,7 @@
 
 (defn handler [request]
     {:status 200
-    :body "this is a response."})
+    :body "this is a response.\n"})
 
 (defn run [args]
     (jetty/run-jetty handler {:port 5000 :join? false})
