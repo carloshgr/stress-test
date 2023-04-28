@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# get from env
 load=10 # requests/s
 
 while true
