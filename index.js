@@ -1,13 +1,15 @@
 const express = require('express');
-const path = require('path');
+
+const app = express();
+app.use(express.json());
 
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
-const app = express();
-app.get('/', (req, res) => {
-  console.log('new request!');
-  res.status(200).send('hello!\n');
+app.post('/', (req, res) => {
+  let unsorted = req.body['array'];
+  let result = { sorted: unsorted.sort((i, j) => i-j) };
+  res.status(200).send(result);
 });
 
 app.listen(PORT, HOST, () => {
