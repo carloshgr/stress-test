@@ -2,11 +2,12 @@ FROM node:16
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY server/package*.json ./
 
 RUN npm install
 
-COPY index.js ./
+COPY server/index.js ./
+COPY server/bubblesort.js ./
 
 EXPOSE 8080
 
